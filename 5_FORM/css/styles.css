@@ -9,3 +9,10 @@ div {
 div input, div label {
     display: block;
 }
+
+/* 14 - radiom button */
+.radio label,
+.radio input,
+.radio span {
+    display: inline-block;
+}
