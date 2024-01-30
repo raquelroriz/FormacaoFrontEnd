@@ -182,3 +182,139 @@ posts.forEach((post) => {
   console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
 });
 
+// 16 - includes (verifica se está incluso no array)
+const brands = ["BMW", "VW", "Fiat"];
+
+console.log(brands.includes("Fiat"));
+
+console.log(brands.includes("Kia"));
+
+if (brands.includes("BMW")) {
+  console.log("Há carros da marca BMW!");
+}
+
+// 17 - reverse (reverte o array de lista)
+const reverseTest = [1, 2, 3, 4, 5];
+
+reverseTest.reverse();
+
+console.log(reverseTest);
+
+// 18 - trim (remove tudo o que não é um texto na string)
+const trimTest = "  testando \n  ";
+
+console.log(trimTest.trim());
+
+console.log(trimTest);
+
+console.log(trimTest.trim().length);
+
+console.log(trimTest.length);
+
+// 19 - padStart e padEnd (insere o texto no começo da estring, podendo ser repetido)
+const testePadStart = "1";
+const newNumber = testePadStart.padStart(4, "0");
+
+console.log(testePadStart);
+
+console.log(newNumber);
+
+const testePadEnd = newNumber.padEnd(10, "0");
+
+console.log(testePadEnd);
+
+// 20 - split (divide uma string em array ; , ou  espaço)
+const frase = "O rato roeu a roupa do rei de Roma";
+const arrayDaFrase = frase.split(" ");
+
+console.log(arrayDaFrase);
+
+// 21 - join (une um array em uma string)
+const fraseDenovo = arrayDaFrase.join(" ")
+console.log(fraseDenovo)
+
+const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+const fraseDeCompra = `Precisamos comprar ${itensParaComprar.join(", ")}.`;
+
+console.log(fraseDeCompra);
+
+// 22 - repeat (vai repetir a qnt de vezes que vc programar)
+const palavra = "Testando";
+
+console.log(palavra.repeat(5));
+
+// 23 - rest operator ( ... permite que adicione de forma infinita)
+const somaInfinita = (...args) => {
+  let total = 0;
+
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+
+  return total;
+};
+
+console.log(somaInfinita(1, 5, 10));
+
+console.log(somaInfinita(1, 2, 30, 4, 5, 6, 7, 7, 8, 9));
+
+// 24 - for...of (o nº de repetição é baseado no array utilizado)
+const somaInfinita2 = (...args) => {
+  let total = 0;
+
+  for(num of args) {
+    total += num;
+  }
+  return total;
+}
+
+console.log(somaInfinita2(1, 2, 4))
+console.log(somaInfinita2(5 , 6, 7, 8, 24, 15))
+ 
+// 25 - destructuring em objetos (eu posso separar em var)
+const userDetails = {
+  firstName: "Matheus",
+  lastName: "Battisti",
+  job: "Programador",
+};
+
+const { firstName, lastName, job } = userDetails;
+
+console.log(firstName, lastName, job);
+
+// renomeando variáveis
+const { firstName: primeiroNome } = userDetails;
+console.log(firstName);
+
+// 26 - destructuring em arrays
+const myList = ["Avião", "Submarino", "Carro"];
+
+const [veiculoA, veiculoB, veiculoC] = myList;
+
+console.log(veiculoA, veiculoB, veiculoC);
+
+// 27 - json
+const myJson =
+  '{"name": "Matheus","age": 31, "skills": ["PHP", "JavaScript", "Python"]}';
+console.log(myJson);
+console.log(typeof myJson)
+
+// 28 - json para objeto e objeto para json
+const myObject = JSON.parse(myJson); // transforma em json
+
+console.log(myObject);
+console.log(myObject.name);
+console.log(typeof myObject);
+
+// json invalido
+const badJson =
+  '{"name": Matheus,"age": 31, "skills": ["PHP", "JavaScript", "Python"]}';
+
+// const myBadObject = JSON.parse(badJson);
+myObject.isOpenToWork = true;
+
+const myNewJson = JSON.stringify(myObject); // transforma em string
+
+console.log(myNewJson);
+
+console.log(typeof myNewJson);
