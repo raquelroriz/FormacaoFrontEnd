@@ -11,7 +11,7 @@ const useCountdown = (date) => {
 
     const now = new Date().getTime();
 
-    const gap = now - countDate;
+    const gap = countDate - now;
 
     const second = 1000;
     const minute = second * 60;
@@ -23,10 +23,10 @@ const useCountdown = (date) => {
     const minuteNumber = Math.floor((gap % hour) / minute);
     const secondNumber = Math.floor((gap % minute) / second);
 
-    setDay(366 - dayNumber);
-    setHour(60 - hourNumber);
-    setMinute(60 - minuteNumber);
-    setSecond(60 - secondNumber);
+    setDay(dayNumber);
+    setHour(hourNumber);
+    setMinute(minuteNumber);
+    setSecond(secondNumber);
   };
 
   setInterval(countdown, 1000);
